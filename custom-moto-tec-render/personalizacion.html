@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personalización · Custom Moto-Tec</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/personalizacion.css">
+</head>
+<body>
+<nav class="cmt-nav">
+  <span class="cmt-nav-logo">CUSTOM MOTO·TEC</span>
+  <ul class="cmt-nav-links" id="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="esencia.html">Nuestra Esencia</a></li>
+    <li><a href="personalizacion.html" class="active">Personalización</a></li>
+    <li><a href="configurador.html">Configurador</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="cmt-eyebrow">// Configurador de Piezas · Módulos Interactivos</p>
+  <h1 class="cmt-heading">TU MOTO, <span class="blue">TU IDENTIDAD</span></h1>
+  <p class="page-desc">Selecciona los módulos que quieres personalizar. El precio se calcula en tiempo real. Cada opción es única y se fabrica a medida.</p>
+</div>
+
+<div class="cmt-section">
+  <p class="cmt-eyebrow">// Selecciona Categoría</p>
+  <h2 class="cmt-heading">MÓDULOS DE <span class="blue">PERSONALIZACIÓN</span></h2>
+  <div class="cmt-line"></div>
+
+  <div class="cat-tabs">
+    <button class="cat-tab active" onclick="showCat('piezas', this)">⚙ Piezas</button>
+    <button class="cat-tab" onclick="showCat('materiales', this)"> Materiales</button>
+    <button class="cat-tab" onclick="showCat('pinturas', this)"> Pinturas</button>
+    <button class="cat-tab" onclick="showCat('acabados', this)">✦ Acabados</button>
+  </div>
+
+  <div class="options-panel active" id="panel-piezas">
+    <div class="opt-card" onclick="toggleOpt(this,'Escape Racing Akrapovic',1200)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Escape</p><p class="opt-name">Escape Racing Akrapovic</p><p class="opt-desc">Titanio full-system. +18 CV demostrados en banco. Homologado competición.</p><p class="opt-price">+ 1.200 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Suspensión Öhlins TTX',2800)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Suspensión</p><p class="opt-name">Suspensión Öhlins TTX</p><p class="opt-desc">Amortiguador trasero ajustable. Horquilla invertida de 43mm. Configuración racing.</p><p class="opt-price">+ 2.800 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Sistema de Frenos Brembo',1850)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Frenos</p><p class="opt-name">Sistema de Frenos Brembo</p><p class="opt-desc">Pinzas monobloc M50. Discos T-Drive flotantes. Líneas trenzadas acero inox.</p><p class="opt-price">+ 1.850 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'ECU Racing Dynojet',950)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Electrónica</p><p class="opt-name">ECU Racing Dynojet</p><p class="opt-desc">Power Commander V con autotuning. Map switch, control de tracción y launch control.</p><p class="opt-price">+ 950 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Ruedas Marchesini Forjadas',3200)"><span class="opt-check">✓</span><span class="opt-icon">⭕</span><p class="opt-cat">// Ruedas</p><p class="opt-name">Ruedas Marchesini Forjadas</p><p class="opt-desc">Aluminio forjado 5 radios. -3.2 kg de masa no suspendida. Acabado anodizado.</p><p class="opt-price">+ 3.200 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Manillar Driven Racing',420)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Dirección</p><p class="opt-name">Manillar Driven Racing</p><p class="opt-desc">Aluminio CNC 28mm. Puños Driven D3. Espejillos retráctiles integrados.</p><p class="opt-price">+ 420 €</p></div>
+  </div>
+
+  <div class="options-panel" id="panel-materiales">
+    <div class="opt-card" onclick="toggleOpt(this,'Fibra de Carbono 3K',2400)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Composites</p><p class="opt-name">Fibra de Carbono 3K</p><p class="opt-desc">Carenado completo en fibra 3K twill prepreg. -8 kg respecto al original.</p><p class="opt-price">+ 2.400 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Titanio Aeronáutico Gr5',1900)"><span class="opt-check">✓</span><span class="opt-icon">⚙</span><p class="opt-cat">// Metales</p><p class="opt-name">Titanio Aeronáutico Gr5</p><p class="opt-desc">Tornillería, soportes y componentes de chasis en Ti6Al4V. Resistencia máxima, peso mínimo.</p><p class="opt-price">+ 1.900 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Cuero Italiano Sella Royal',780)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Tapicería</p><p class="opt-name">Cuero Italiano Sella Royal</p><p class="opt-desc">Asiento a medida con cuero full-grain curtido vegetal. Bordado personalizado disponible.</p><p class="opt-price">+ 780 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Kevlar Reforzado Aramida',1600)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Alta Resistencia</p><p class="opt-name">Kevlar Reforzado Aramida</p><p class="opt-desc">Protecciones y depósito en tejido Kevlar. Estética industrial única.</p><p class="opt-price">+ 1.600 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Aluminio Anodizado 7075',1100)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Chasis</p><p class="opt-name">Aluminio Anodizado 7075</p><p class="opt-desc">Subchasis y soportes en aleación 7075-T6 mecanizados CNC. Anodizado a color a elección.</p><p class="opt-price">+ 1.100 €</p></div>
+  </div>
+
+  <div class="options-panel" id="panel-pinturas">
+    <div class="opt-card" onclick="toggleOpt(this,'Pintura Bicapa Candy',1800)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Efecto Premium</p><p class="opt-name">Pintura Bicapa Candy</p><p class="opt-desc">Efecto profundidad con base metálica y capa candy translúcida. Más de 40 colores.</p><p class="opt-price">+ 1.800 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Cromo Líquido Chrome-Tech',2200)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Efecto Espejo</p><p class="opt-name">Cromo Líquido Chrome-Tech</p><p class="opt-desc">Acabado tipo espejo sin galvanizado. Aplicación sobre cualquier superficie. Protección UV.</p><p class="opt-price">+ 2.200 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Camaleón Termocrómico',2900)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Efecto Variable</p><p class="opt-name">Camaleón Termocrómico</p><p class="opt-desc">Pigmento que cambia de color según la temperatura. Espectáculo visual garantizado.</p><p class="opt-price">+ 2.900 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Fosforescente UV Night Rider',1400)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Efecto Noche</p><p class="opt-name">Fosforescente UV Night Rider</p><p class="opt-desc">Pigmentos que brillan en la oscuridad. Ideal para pistas nocturnas.</p><p class="opt-price">+ 1.400 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Mate Satinado Premium',1100)"><span class="opt-check">✓</span><span class="opt-icon">⬛</span><p class="opt-cat">// Clásico Moderno</p><p class="opt-name">Mate Satinado Premium</p><p class="opt-desc">Acabado mate con protector nanocerámico. Textura sedosa. Elegancia de alta gama.</p><p class="opt-price">+ 1.100 €</p></div>
+  </div>
+
+  <div class="options-panel" id="panel-acabados">
+    <div class="opt-card" onclick="toggleOpt(this,'Grafiti Artístico de Autor',3500)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Arte Urbano</p><p class="opt-name">Grafiti Artístico de Autor</p><p class="opt-desc">Diseño único pintado a mano por artista internacional. Certificado de autenticidad incluido.</p><p class="opt-price">+ 3.500 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Stencil Militar Tech',1600)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Estética Táctica</p><p class="opt-name">Stencil Militar Tech</p><p class="opt-desc">Plantillas militares con tipografía táctica. Camuflaje digital o clásico.</p><p class="opt-price">+ 1.600 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Airbrush Biomecánico',2800)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Cyberpunk</p><p class="opt-name">Airbrush Biomecánico</p><p class="opt-desc">Engranajes, circuitos y anatomía mecánica. Inspiración H.R. Giger. Hiperfotorrealismo.</p><p class="opt-price">+ 2.800 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Número de Carrera Oficial',380)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Racing Identity</p><p class="opt-name">Número de Carrera Oficial</p><p class="opt-desc">Dorsal a elección en panel de cola y lateral. Reglamentario FIM.</p><p class="opt-price">+ 380 €</p></div>
+    <div class="opt-card" onclick="toggleOpt(this,'Logos Patrocinadores Premium',650)"><span class="opt-check">✓</span><span class="opt-icon"></span><p class="opt-cat">// Branding</p><p class="opt-name">Logos Patrocinadores Premium</p><p class="opt-desc">Posicionamiento de logos en vinil impreso UV de alta resolución.</p><p class="opt-price">+ 650 €</p></div>
+  </div>
+
+  <div class="summary-wrap">
+    <p class="summary-header">// Resumen de Selección</p>
+    <ul class="summary-list" id="summary-list">
+      <li class="summary-empty">— Ninguna opción seleccionada aún —</li>
+    </ul>
+    <div class="summary-total">
+      <span class="summary-total-label">Total Extras</span>
+      <span class="summary-total-price" id="summary-total">0 €</span>
+    </div>
+    <a href="configurador.html" class="cmt-btn cmt-btn-primary cmt-btn-block" style="margin-top:1.2rem">▶ Continuar al Configurador de Presupuesto</a>
+  </div>
+</div>
+
+<footer class="cmt-footer">
+  <p>// CUSTOM MOTO·TEC · ZONA FRANCA · BARBATE · PRECIOS ORIENTATIVOS SIN IVA</p>
+</footer>
+
+<script src="js/global.js"></script>
+<script src="js/personalizacion.js"></script>
+</body>
+</html>

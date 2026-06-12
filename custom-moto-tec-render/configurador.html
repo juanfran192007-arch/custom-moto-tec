@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configurador de Presupuesto · Custom Moto-Tec</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/configurador.css">
+</head>
+<body>
+<nav class="cmt-nav">
+  <span class="cmt-nav-logo">CUSTOM MOTO·TEC</span>
+  <ul class="cmt-nav-links" id="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="esencia.html">Nuestra Esencia</a></li>
+    <li><a href="personalizacion.html">Personalización</a></li>
+    <li><a href="configurador.html" class="active">Configurador</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="cfg-wrap">
+  <p class="cmt-eyebrow">// Sistema de Presupuestos · Zona Franca Barbate</p>
+  <h1 class="cmt-heading">CONFIGURADOR DE <span class="blue">PRESUPUESTO</span></h1>
+  <div class="cmt-line"></div>
+
+  <div class="progress-bar-wrap">
+    <div class="progress-bar-fill" id="progress-fill" style="width:33%"></div>
+  </div>
+
+  <div class="stepper">
+    <div class="step-item active" id="step-ind-1"><div class="step-dot">01</div><div class="step-label">Identificación</div></div>
+    <div class="step-item" id="step-ind-2"><div class="step-dot">02</div><div class="step-label">Tecnología</div></div>
+    <div class="step-item" id="step-ind-3"><div class="step-dot">03</div><div class="step-label">Presupuesto</div></div>
+  </div>
+
+  <!-- PASO 1 -->
+  <div class="step-panel active" id="panel-step-1">
+    <div class="form-block">
+      <p class="form-block-title">// Datos del Cliente</p>
+      <div class="form-grid">
+        <div class="cmt-form-group"><label class="cmt-form-label">Nombre *</label><input class="cmt-form-input" id="f-nombre" type="text" placeholder="Juan"></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">Apellidos *</label><input class="cmt-form-input" id="f-apellidos" type="text" placeholder="García Fernández"></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">DNI / NIE *</label><input class="cmt-form-input" id="f-dni" type="text" placeholder="12345678A" maxlength="10"></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">Fecha de Nacimiento *</label><input class="cmt-form-input" id="f-nacimiento" type="date"></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">Correo Electrónico *</label><input class="cmt-form-input" id="f-email" type="email" placeholder="cliente@email.com"></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">Teléfono *</label><input class="cmt-form-input" id="f-telefono" type="tel" placeholder="+34 600 000 000"></div>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <p class="form-block-title">// Datos de la Motocicleta a Customizar</p>
+      <div class="form-grid">
+        <div class="cmt-form-group"><label class="cmt-form-label">Matrícula *</label><input class="cmt-form-input" id="f-matricula" type="text" placeholder="0000-AAA" maxlength="10" style="text-transform:uppercase"><span class="cmt-form-note">// Matrícula española o extranjera</span></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">Número de Carnet / Permiso *</label><input class="cmt-form-input" id="f-carnet" type="text" placeholder="A / A2 / B" maxlength="20"><span class="cmt-form-note">// Categoría habilitante para la moto</span></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">Marca *</label><input class="cmt-form-input" id="f-marca" type="text" placeholder="Ducati, BMW, Honda..."></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">Modelo *</label><input class="cmt-form-input" id="f-modelo" type="text" placeholder="Monster 1200, R1..."></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">Año de Fabricación *</label><input class="cmt-form-input" id="f-anio" type="number" placeholder="2020" min="1950" max="2030"></div>
+        <div class="cmt-form-group"><label class="cmt-form-label">Cilindrada (cc)</label><input class="cmt-form-input" id="f-cc" type="number" placeholder="1200" min="50" max="3000"></div>
+        <div class="cmt-form-group" style="grid-column:1/-1"><label class="cmt-form-label">Número de Bastidor (VIN)</label><input class="cmt-form-input" id="f-vin" type="text" placeholder="WB10119XXXXXXXX" maxlength="20" style="text-transform:uppercase"><span class="cmt-form-note">// 17 caracteres · Se verifica contra DGT</span></div>
+        <div class="cmt-form-group" style="grid-column:1/-1"><label class="cmt-form-label">Descripción breve del proyecto</label><textarea class="cmt-form-input" id="f-desc" rows="3" style="resize:vertical" placeholder="Explique brevemente qué quiere hacer con su moto..."></textarea></div>
+      </div>
+    </div>
+
+    <div class="rgpd-row">
+      <input type="checkbox" id="rgpd-check" style="width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--c-blue);cursor:pointer">
+      <p class="rgpd-text">He leído y acepto la <a href="#">Política de Privacidad</a> y el <a href="#">Aviso Legal</a> de Custom Moto-Tec. Consiento el tratamiento de mis datos personales conforme al RGPD (UE) 2016/679.</p>
+    </div>
+
+    <div class="step-nav">
+      <span></span>
+      <button class="cmt-btn cmt-btn-primary" onclick="goStep(2)">Siguiente: Tecnología ▶</button>
+    </div>
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="step-panel" id="panel-step-2">
+    <div class="form-block">
+      <p class="form-block-title">// Seleccione Tecnología de Propulsión</p>
+      <div class="motor-grid">
+        <div class="motor-card" id="mc-a" onclick="selectMotor('A')">
+          <span class="mc-icon"></span>
+          <p class="mc-title">Combustión Racing</p>
+          <p class="mc-desc">Motor de competición de alta cilindrada. Puesta a punto en banco de potencia. Homologación europea incluida. Disponibilidad inmediata.</p>
+          <p class="mc-price" id="mc-price-a">37.500 €</p>
+          <div class="mc-select-ring" id="mc-ring-a">◯</div>
+        </div>
+        <div class="motor-card" id="mc-b" onclick="selectMotor('B')">
+          <span class="mc-lock"> Planes a Futuro</span>
+          <span class="mc-icon">⚗</span>
+          <p class="mc-title">Proyecto Hidrógeno 2040</p>
+          <p class="mc-desc">Propulsión por celda de combustible H₂. Reserva estratégica. Su solicitud accede a la VLAN 10 de administración.</p>
+          <p class="mc-price mc-price-locked">63.000 €</p>
+          <div class="mc-select-ring" id="mc-ring-b">◯</div>
+        </div>
+      </div>
+      <div id="extras-preview" class="extras-preview" style="display:none">
+        <p class="extras-preview-title">// Extras importados de Personalización</p>
+        <div id="extras-list"></div>
+      </div>
+    </div>
+    <div class="step-nav">
+      <button class="cmt-btn cmt-btn-ghost" onclick="goStep(1)">◀ Volver</button>
+      <button class="cmt-btn cmt-btn-primary" onclick="goStep(3)">Calcular Presupuesto ▶</button>
+    </div>
+  </div>
+
+  <!-- PASO 3 -->
+  <div class="step-panel" id="panel-step-3">
+    <div class="budget-display" id="budget-display">
+      <p class="budget-label">// Presupuesto Generado · Custom Moto-Tec</p>
+      <p class="budget-client" id="b-client"></p>
+      <p class="budget-moto"   id="b-moto"></p>
+      <div class="budget-breakdown" id="b-breakdown"></div>
+      <p class="budget-total-label">Presupuesto Total Estimado</p>
+      <p class="budget-total" id="b-total"></p>
+      <div class="budget-vlan" id="b-vlan">⚠ Plan Estratégico Seleccionado · Su solicitud ha sido registrada y será enviada directamente a la VLAN 10 de administración para evaluación confidencial por el equipo de I+D.</div>
+      <p class="budget-ref" id="b-ref"></p>
+    </div>
+    <div class="step-nav" style="margin-top:1.5rem">
+      <button class="cmt-btn cmt-btn-ghost" onclick="goStep(2)">◀ Modificar</button>
+      <button class="cmt-btn cmt-btn-green" onclick="enviarPresupuesto()">▶ Enviar Solicitud</button>
+    </div>
+    <div id="sent-msg" class="sent-msg" style="display:none">
+      <p class="sent-title">✓ SOLICITUD REGISTRADA</p>
+      <p class="sent-desc">Su presupuesto ha sido enviado al equipo de Custom Moto-Tec. Recibirá confirmación en su correo en menos de 24 horas.</p>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem">
+      <button class="cmt-btn cmt-btn-ghost" onclick="reiniciar()">Nuevo Presupuesto</button>
+    </div>
+  </div>
+</div>
+
+<footer class="cmt-footer">
+  <p>// CUSTOM MOTO·TEC · ZONA FRANCA · BARBATE (CÁDIZ) · PRECIOS ORIENTATIVOS SIN IVA · RGPD COMPLIANT</p>
+  <p>SISTEMA v2.0 · VLAN 10 ADMIN · © 2024</p>
+</footer>
+
+<script src="js/global.js"></script>
+<script src="js/configurador.js"></script>
+</body>
+</html>
